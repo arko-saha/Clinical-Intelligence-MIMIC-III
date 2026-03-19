@@ -88,3 +88,7 @@ env/
 # Backup files
 *.bak
 *.backup
+
+# Research Documents
+future_works.md
+research_proposition.md

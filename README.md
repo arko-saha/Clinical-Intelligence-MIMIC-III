@@ -14,36 +14,38 @@
 
 ## 📋 Overview
 
-This project combines **four cutting-edge AI techniques** to build a comprehensive clinical intelligence platform using the MIMIC-III dataset. It demonstrates how machine learning, graph neural networks, reinforcement learning, and federated learning can work together to create intelligent medical decision support systems.
+This project combines **advanced AI techniques** to build a comprehensive clinical intelligence platform using the MIMIC-III dataset. It explores two primary pathways: an integrated decision support pipeline (`main.ipynb`) and an advanced foundation model architecture for continuous dynamics and temporal reasoning (`federated_foundation_models.ipynb`).
 
 ### 🎯 Key Features
 
 - ✅ **Machine Learning for Mortality Prediction** - Random Forest model for sepsis outcome prediction
 - ✅ **Graph Neural Networks** - Disease co-occurrence analysis and risk factor discovery
 - ✅ **Reinforcement Learning** - Q-learning for optimal treatment policy optimization
-- ✅ **Federated Learning** - Privacy-preserving multi-hospital collaboration
-- ✅ **ELI5 Explanations** - Complex AI concepts explained simply
-- ✅ **Real Data Analysis** - Using 100+ patients from MIMIC-III database
-- ✅ **Production-Ready Code** - Clean, documented, and standardized
+- ✅ **Continuous-Time Modeling** - ACSSM for irregular physiological time-series dynamics
+- ✅ **Temporal Attention** - Multi-scale context-dependent reasoning with adaptive decay
+- ✅ **Federated Learning** - Privacy-preserving multi-hospital collaboration with DP-SGD
+- ✅ **Real Data Analysis** - Using patients from the MIMIC-III database
+- ✅ **Production-Ready Code** - Clean, documented, and standardized with ELI5 explanations
 
 ---
 
 ## 📚 Project Structure
 
-```
+```text
 Clinical-Intelligence-MIMIC-III/
-├── main.ipynb                 # Complete interactive notebook
-├── requirements.txt           # Python dependencies
-├── .gitignore                 # Git ignore patterns
-├── README.md                  # This file
+├── main.ipynb                        # Primary integrated decision support pipeline
+├── federated_foundation_models.ipynb # Advanced continuous dynamics & FL architecture
+├── requirements.txt                  # Python dependencies
+├── .gitignore                        # Git ignore patterns
+├── README.md                         # This file
 ├── data/
-│   ├── ADMISSIONS.csv        # Hospital admission records
-│   ├── PATIENTS.csv          # Patient demographics
-│   ├── ICUSTAYS.csv          # ICU stay details
-│   ├── DIAGNOSES_ICD.csv     # Medical diagnoses
-│   ├── PROCEDURES_ICD.csv    # Medical procedures
+│   ├── ADMISSIONS.csv                # Hospital admission records
+│   ├── PATIENTS.csv                  # Patient demographics
+│   ├── ICUSTAYS.csv                  # ICU stay details
+│   ├── DIAGNOSES_ICD.csv             # Medical diagnoses
+│   ├── PROCEDURES_ICD.csv            # Medical procedures
 │   └── ... (other MIMIC-III tables)
-└── LICENSE                    # MIT License
+└── LICENSE                           # MIT License
 ```
 
 ---
@@ -79,54 +81,43 @@ Clinical-Intelligence-MIMIC-III/
 
 4. **Start Jupyter**
    ```bash
-   jupyter notebook main.ipynb
+   jupyter notebook
    ```
 
 ---
 
 ## 📖 Notebook Sections
 
-### 1️⃣ Data Loading & Exploration
-- Load MIMIC-III dataset
-- Analyze patient demographics
-- Examine survival rates and diagnoses
-- Visualize ICU stay patterns
+### Pipeline 1: Integrated Clinical Assistant (`main.ipynb`)
 
-### 2️⃣ Sepsis Survival Prediction (ML)
-- Identify sepsis patients using ICD-9 codes
-- Build Random Forest classifier
-- Calculate AUC score and feature importance
-- Evaluate model performance
+#### 1️⃣ Data Loading & Exploration
+- Load MIMIC-III dataset and analyze survival rates and patient demographics.
 
-### 3️⃣ Risk Factor Discovery (GNN)
-- Find cancer patients in the cohort
-- Analyze disease co-occurrence patterns
-- Build comorbidity heatmaps
-- Identify hidden clinical connections
+#### 2️⃣ Sepsis Survival Prediction (ML)
+- Build Random Forest classifier for ICD-9 identified sepsis cases to estimate mortality risk.
 
-### 4️⃣ Treatment Optimization (RL)
-- Define sepsis treatment environment
-- Implement Q-learning agent
-- Train on 1000+ episodes
-- Learn optimal treatment policies
+#### 3️⃣ Risk Factor Discovery (GNN)
+- Analyze disease co-occurrence patterns and comorbidity heatmaps to identify hidden clinical connections.
 
-### 5️⃣ Privacy-Preserving Learning (FL)
-- Simulate multi-hospital collaboration
-- Train federated models
-- Compare with local models
-- Achieve 98.9% accuracy with FL
+#### 4️⃣ Treatment Optimization (RL)
+- Implement Q-learning agent to train on 1000+ episodes for optimizing sepsis treatment policies.
 
-### 6️⃣ Integrated Clinical AI System
-- Combine all techniques
-- Build MIMICClinicalAssistant class
-- Test with sample patient cases
-- Generate clinical workflows
+#### 5️⃣ Integrated Clinical AI System
+- Combine techniques into a unified `MIMICClinicalAssistant` to generate end-to-end clinical workflows.
 
-### 7️⃣ References & Documentation
-- Links to original Kaggle projects
-- Key research papers
-- Tools and libraries used
-- MIMIC-III access information
+### Pipeline 2: Federated Foundation Architecture (`federated_foundation_models.ipynb`)
+
+#### 1️⃣ Continuous Dynamics Layer (ACSSM)
+- Transform irregular clinical observations into continuous latent representations without suffering from interpolation artifacts.
+
+#### 2️⃣ Temporal Attention Mechanisms
+- Utilize Multi-Scale Time-Aware Attention with adaptive decay functions (Exponential, Gaussian, Power-law) to recognize crucial physiological states contextually.
+
+#### 3️⃣ Federated Learning Framework
+- Train foundation models across simulated hospital nodes utilizing Differential Privacy (DP-SGD) and Secure Aggregation logic.
+
+#### 4️⃣ Clinical Validation Engine
+- Validate foundation model clinical intelligence via AUROC/AUPRC metrics for critical early sepsis detection.
 
 ---
 
@@ -144,7 +135,8 @@ Clinical-Intelligence-MIMIC-III/
 
 ### Model Performance
 
-- **Baseline Model AUC**: 0.75+
+- **Baseline ML Model AUC**: 0.75+
+- **Foundation Model AUROC**: 0.89+
 - **Federated Learning Accuracy**: 98.9%
 - **Treatment Policy Convergence**: ~1000 episodes
 
@@ -174,7 +166,8 @@ Clinical-Intelligence-MIMIC-III/
 - **Machine Learning**: Classification and feature importance
 - **Graph Neural Networks**: Disease relationship modeling
 - **Reinforcement Learning**: Policy optimization for healthcare
-- **Federated Learning**: Privacy-preserving collaboration
+- **Continuous-Time SSL**: Advanced dynamics tracking through ACSSM
+- **Federated Learning**: Privacy-preserving collaborative model training
 - **Clinical Concepts**: Sepsis, mortality prediction, treatment strategies
 - **Best Practices**: Code organization, documentation, reproducibility
 
@@ -203,8 +196,12 @@ Clinical-Intelligence-MIMIC-III/
 
 ## 🔄 Workflow
 
-```
+```text
 Patient Data Input
+        ↓
+Continuous Dynamics Processing ──→ Physiological Latent Space
+        ↓
+Temporal Reasoning (Attention) ──→ Contextual Clinical Priorities
         ↓
 Survival Risk Prediction (ML) ──→ Mortality Risk Score
         ↓
@@ -228,6 +225,7 @@ Clinical Decision Support Output
 4. [GNN Cancer Risk Factors](https://www.kaggle.com/code/krokodilmeer/gnn-cancer-risk-factors)
 
 ### Research Papers
+- Vaswani et al. "Attention Is All You Need" (NeurIPS 2017)
 - Johnson et al. "MIMIC-III, a freely accessible critical care database"
 - Raghu et al. "Deep Reinforcement Learning for Sepsis Treatment"
 - Kaissis et al. "Secure, privacy-preserving and federated machine learning in medical imaging"
