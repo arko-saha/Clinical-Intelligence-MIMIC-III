@@ -262,7 +262,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Arko Saha**
 - GitHub: [@arko-saha](https://github.com/arko-saha)
-- Portfolio: Clinical Intelligence & Healthcare AI
 
 ---
 
