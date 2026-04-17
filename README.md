@@ -33,8 +33,14 @@ This project combines **advanced AI techniques** to build a comprehensive clinic
 
 ```text
 Clinical-Intelligence-MIMIC-III/
-├── main.ipynb                        # Primary integrated decision support pipeline
-├── federated_foundation_models.ipynb # Advanced continuous dynamics & FL architecture
+├── Integrated_Clinical_Assistant/    # Integrated decision support pipeline
+│   ├── src/main.ipynb
+│   ├── README.md
+│   └── algorithms_explanation.md
+├── Federated_Foundation_Models/      # Advanced continuous dynamics & FL module
+│   ├── src/federated_foundation_models.ipynb
+│   ├── README.md
+│   └── algorithms_explanation.md
 ├── requirements.txt                  # Python dependencies
 ├── .gitignore                        # Git ignore patterns
 ├── README.md                         # This file
